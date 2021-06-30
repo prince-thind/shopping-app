@@ -1,11 +1,11 @@
 function CartItem({ item, cartSub }) {
   return (
-    <div>
-      <div>
+    <div className='cart-item'>
+      <div className='cart-item-name'>
         Name: {item.name} 
       </div>
-      <div>Count: {item.count} ({item.currency}{+item.price * +item.count})</div>
-      <button onClick={increaseCount}>Add More</button>
+      <div className='cart-item-count'>Count: {item.count} ({item.currency}{+item.price * +item.count})</div>
+      <button className='cart-add-button button'onClick={increaseCount}>Add More</button>
       <RemoveButton />
     </div>
   );
@@ -22,7 +22,7 @@ function CartItem({ item, cartSub }) {
       return null;
     }
 
-    return <button onClick={decreaseCount}>remove</button>;
+    return <button className='cart-remove-button button' onClick={decreaseCount}>remove</button>;
   }
 }
 

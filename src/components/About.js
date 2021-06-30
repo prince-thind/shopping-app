@@ -1,6 +1,6 @@
 function About() {
   return (
-    <p>
+    <p className='about-para'>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis totam quidem sint ex labore et, cupiditate eaque
       magni ad velit exercitationem rerum magnam sed nesciunt explicabo, aspernatur provident. Cum assumenda molestiae
       sequi perspiciatis necessitatibus totam. Maxime assumenda rerum rem nisi, sed qui accusantium perferendis magnam

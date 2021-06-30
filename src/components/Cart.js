@@ -14,22 +14,22 @@ function Cart(props) {
   function CartCapacityLogic() {
     if (totalValue === 0) {
       return (
-        <div>
+        <div className='empty-cart'>
           Cart is empty, Consider adding items from <Link to="/shop">shop</Link>{' '}
         </div>
       );
     }
     return (
       <React.Fragment>
-        <h2>Items in Cart: </h2>
+        <h2 className='cart-items-heading'>Items in Cart: </h2>
         <Items />
-        <div> Cart Total: {totalValue}</div>
+        <div className='cart-total'> Cart Total: {totalValue}</div>
       </React.Fragment>
     );
   }
   function Items() {
     return (
-      <div>
+      <div className='cart-items'>
         {props.items
           .filter((item) => item.count > 0)
           .map((item) => {

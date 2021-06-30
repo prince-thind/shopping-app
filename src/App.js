@@ -13,7 +13,7 @@ function App() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    const temp = getItems(); // this may just be a fetch call
+    const temp = getItems(); // this may just be a fetch call (async)
     setItems(temp); // will be temp.then() in case of async
   }, []);
 
@@ -38,35 +38,40 @@ function App() {
         <nav className="nav-bar">
           <Link to="/">Home</Link>
           <ul className="nav-bar-list">
-            <Link to="/about">About</Link>
-            <Link to="/shop">Shop</Link>
-            <Link to="/cart">
-              Cart(
-              {items.reduce((a, b) => {
-                return a + b.count;
-              }, 0)}
-              )
-            </Link>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/shop">Shop</Link>
+            </li>
+            <li>
+              <Link to="/cart">
+                Cart(
+                {items.reduce((a, b) => {
+                  return a + b.count;
+                }, 0)}
+                )
+              </Link>
+            </li>
           </ul>
         </nav>
+        <main className="main">
+          <Switch>
+            <Route path="/" exact>
+              <Home img={images['home']} />
+            </Route>
+            <Route path="/about" exact>
+              <About />
+            </Route>
+            <Route path="/shop" exact>
+              <Shop images={images} items={items} cartSub={cartSub} />
+            </Route>
+            <Route path="/cart" exact>
+              <Cart items={items} cartSub={cartSub} />
+            </Route>
+          </Switch>
+        </main>
       </div>
-
-      <main className="main">
-        <Switch>
-          <Route path="/" exact>
-            <Home img={images['home']} />
-          </Route>
-          <Route path="/about" exact>
-            <About />
-          </Route>
-          <Route path="/shop" exact>
-            <Shop images={images} items={items} cartSub={cartSub} />
-          </Route>
-          <Route path="/cart" exact>
-            <Cart items={items} cartSub={cartSub} />
-          </Route>
-        </Switch>
-      </main>
     </Router>
   );
 }

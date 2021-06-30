@@ -1,17 +1,17 @@
 function Item({ item, images, cartSub }) {
   return (
-    <div>
-      <img src={images[item.name]} alt="item" />
-      <div>
-        <span>{item.name}</span>
-        <span>
+    <div className='item'>
+      <img src={images[item.name]} alt="item" className='item-img'/>
+      <div className='item-description'>
+        <span className='item-name'>{item.name}</span>
+        <span className='item-price'>
           {' '}
           {item.currency}
           {item.price}
         </span>
         <ItemsInCart count={item.count} />
       </div>
-      <button onClick={increaseCount}>Add to Cart</button>
+      <button className='cart-add-button button' onClick={increaseCount}>Add to Cart</button>
       <RemoveButton count={item.count} />
     </div>
   );
@@ -28,13 +28,13 @@ function Item({ item, images, cartSub }) {
       return null;
     }
 
-    return <button onClick={decreaseCount}>remove</button>;
+    return <button className='cart-remove-button button' onClick={decreaseCount}>remove</button>;
   }
   function ItemsInCart({ count }) {
     if (count === 0) {
       return null;
     }
-    return <span>({count} in cart)</span>;
+    return <span className='items-in-cart'>({count} in cart)</span>;
   }
 }
 
