@@ -40,7 +40,13 @@ function App() {
           <ul className="nav-bar-list">
             <Link to="/about">About</Link>
             <Link to="/shop">Shop</Link>
-            <Link to="/cart">Cart({items.reduce((a,b)=>{return a+b.count},0)})</Link>
+            <Link to="/cart">
+              Cart(
+              {items.reduce((a, b) => {
+                return a + b.count;
+              }, 0)}
+              )
+            </Link>
           </ul>
         </nav>
       </div>
@@ -57,7 +63,7 @@ function App() {
             <Shop images={images} items={items} cartSub={cartSub} />
           </Route>
           <Route path="/cart" exact>
-            <Cart cartSub={cartSub} />
+            <Cart items={items} cartSub={cartSub} />
           </Route>
         </Switch>
       </main>
@@ -72,38 +78,44 @@ function getItems() {
     {
       name: 'cup',
       key: uniqid(),
-      price: '$5',
+      price: '5',
       count: 0,
+      currency: '$',
     },
     {
       name: 'feather',
-      price: '$10',
+      price: '10',
       key: uniqid(),
       count: 0,
+      currency: '$',
     },
     {
       name: 'griffin',
       key: uniqid(),
-      price: '$50',
+      price: '50',
       count: 0,
+      currency: '$',
     },
     {
       name: 'jar',
       key: uniqid(),
-      price: '$5',
+      price: '5',
       count: 0,
+      currency: '$',
     },
     {
       name: 'rings',
       key: uniqid(),
-      price: '$75',
+      price: '75',
       count: 0,
+      currency: '$',
     },
     {
       name: 'watch',
       key: uniqid(),
-      price: '$100',
+      price: '100',
       count: 0,
+      currency: '$',
     },
   ];
 }
