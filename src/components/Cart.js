@@ -1,6 +1,7 @@
 import CartItem from './CartItem.js';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../styles/Cart.css';
 
 function Cart(props) {
   const totalValue = findTotal(props.items);
@@ -21,10 +22,10 @@ function Cart(props) {
     }
     return (
       <React.Fragment>
-        <h2 className='cart-items-heading'>Items in Cart: </h2>
+        <h2 className='cart-item-heading'>Cart Items </h2>
         <Items />
-        <div className='cart-total'> Cart Total: {totalValue}</div>
-        <button onClick={proceedPayment}>Proceed to Payment</button>
+        <div className='cart-total'> Cart Total: {props.items[1].currency}{totalValue}</div>
+        <button className='payment-button' onClick={proceedPayment}>Proceed to Payment</button>
       </React.Fragment>
     );
   }
