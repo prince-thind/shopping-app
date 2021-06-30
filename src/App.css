@@ -1,13 +1,9 @@
-img {
-  height: 10rem;
-  width: 10rem;
-}
 * {
   margin: 0;
   padding: 0;
 }
 body{
-  background-color: rgb(190, 196, 159);
+  background-color: hsl(70, 24%, 70%);
 }
 .App {
   text-align: center;
@@ -18,7 +14,6 @@ body{
   justify-content: space-between;
   align-items: center;
   padding: 0 2rem;
-  margin-bottom: 1rem;
 }
 .nav-bar-list {
   display: flex;
@@ -29,7 +24,7 @@ body{
 .nav-bar a {
   padding: 1rem;
   color: white;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   text-decoration: none;
 }
 
