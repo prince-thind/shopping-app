@@ -1,5 +1,7 @@
 function About() {
   return (
+    <div className='about-section'>
+    <h2 className='about heading'>Foo Shop</h2>
     <p className='about-para'>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis totam quidem sint ex labore et, cupiditate eaque
       magni ad velit exercitationem rerum magnam sed nesciunt explicabo, aspernatur provident. Cum assumenda molestiae
@@ -30,6 +32,7 @@ function About() {
       blanditiis minus molestiae, dolorem accusamus earum sint? Error nesciunt impedit accusamus beatae vitae, neque,
       distinctio adipisci eveniet, sint quasi fuga pariatur tempora laborum.
     </p>
+    </div>
   );
 }
 

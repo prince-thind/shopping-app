@@ -36,7 +36,7 @@ function App() {
     <Router>
       <div className="App">
         <nav className="nav-bar">
-          <Link to="/">Home</Link>
+          <Link to="/"><span>Home</span></Link>
           <ul className="nav-bar-list">
             <li>
               <Link to="/about">About</Link>
