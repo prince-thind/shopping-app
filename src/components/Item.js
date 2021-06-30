@@ -1,11 +1,14 @@
-function Item({item,images,cartSub}) {
-
+function Item({ item, images, cartSub }) {
   return (
     <div>
       <img src={images[item.name]} alt="item" />
       <div>
         <span>{item.name}</span>
-        <span>{item.price}</span>
+        <span>
+          {' '}
+          {item.currency}
+          {item.price}
+        </span>
         <ItemsInCart count={item.count} />
       </div>
       <button onClick={increaseCount}>Add to Cart</button>
