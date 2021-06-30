@@ -24,6 +24,7 @@ function Cart(props) {
         <h2 className='cart-items-heading'>Items in Cart: </h2>
         <Items />
         <div className='cart-total'> Cart Total: {totalValue}</div>
+        <button onClick={proceedPayment}>Proceed to Payment</button>
       </React.Fragment>
     );
   }
@@ -43,6 +44,9 @@ function Cart(props) {
     return items.reduce((acc, item) => {
       return acc + item.price * item.count;
     }, 0);
+  }
+  function proceedPayment(items){
+    console.log('redirected to payment portal');
   }
 }
 
