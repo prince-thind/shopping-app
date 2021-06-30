@@ -1,6 +1,7 @@
 import './App.css';
 import { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import Home from './components/Home.js';
 import About from './components/About.js';
 import Shop from './components/Shop.js';
 import Cart from './components/Cart.js';
@@ -30,7 +31,12 @@ function App() {
           </ul>
         </nav>
       </div>
+
+
       <Switch>
+      <Route path="/" exact>
+         <Home/>
+        </Route>
         <Route path="/about" exact>
          <About/>
         </Route>
