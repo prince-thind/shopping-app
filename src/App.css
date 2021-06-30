@@ -1,4 +1,38 @@
-img{
-    height: 10rem;
-    width:10rem;
+img {
+  height: 10rem;
+  width: 10rem;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-color: rgb(190, 196, 159);
+}
+.App {
+  text-align: center;
+}
+.nav-bar {
+  background-color: rgb(36, 36, 36);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  margin-bottom: 1rem;
+}
+.nav-bar-list {
+  display: flex;
+}
+.nav-bar ul {
+  list-style: none;
+}
+.nav-bar a {
+  padding: 1rem;
+  color: white;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.nav-bar a:hover{
+    background-color: hsl(120, 34%, 32%);
 }
