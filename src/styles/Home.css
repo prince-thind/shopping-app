@@ -1,22 +1,28 @@
-.home-content{
-    padding:1rem;
+.home-content {
+  padding: 1rem;
 }
-.home-heading{
-    color:black;
-    text-shadow: 3px 3px 3px white;
-    font-size: 2rem;
-    padding:0.5rem;
+.home-heading {
+  color: black;
+  text-shadow: 3px 3px 3px white;
+  font-size: 2rem;
+  padding: 0.5rem;
 }
-.home-image{
-    border: 3px solid black;
-    max-width: 70%;
-    height: auto;
+.home-image {
+  border: 3px solid black;
+  max-width: 70%;
+  height: auto;
 }
-.home-intro{
-    padding:1rem;
-    margin:1rem;
-    font-size:2rem;
-    color:white;
-    background-color: rgb(32, 61, 31);
-    border:1px solid black;
+.home-intro {
+  padding: 1rem;
+  margin: 1rem;
+  font-size: 2rem;
+  color: white;
+  background-color: rgb(32, 61, 31);
+  border: 1px solid black;
+}
+
+@media only screen and (max-width: 760px) {
+  .home-intro {
+    font-size: 1.2rem;
+  }
 }

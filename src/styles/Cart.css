@@ -1,41 +1,47 @@
-.cart-item-heading{
-    background-color: rgb(32, 61, 31);
-    padding:1rem;
-    margin:1rem;
-    color:white;
+.cart-item-heading {
+  background-color: rgb(32, 61, 31);
+  padding: 1rem;
+  margin: 1rem;
+  color: white;
 }
-.empty-cart{
-    padding:1rem;
-    margin:1rem;
-    margin-top:2rem;
-    font-size:1.5rem;
-    color:white;
-    background-color: rgb(41, 24, 24);
+.empty-cart {
+  padding: 1rem;
+  margin: 1rem;
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  color: white;
+  background-color: rgb(41, 24, 24);
 }
-.empty-cart a{
-    color:white;
-    font-size: 1.1em;
+.empty-cart a {
+  color: white;
+  font-size: 1.1em;
 }
-.cart-items{
-    min-width: 40%;
-    width:fit-content;
-    margin:0 auto;
+.cart-items {
+  min-width: 40%;
+  width: fit-content;
+  margin: 0 auto;
 }
-.cart-total{
-    padding:1rem;
-    margin:0.5rem auto 0 auto;
-    width: 90%;
-    font-size:1.3rem;
-    color:white;
-    background-color: rgb(19, 37, 35);
+.cart-total {
+  padding: 1rem;
+  margin: 0.5rem auto 0 auto;
+  width: 90%;
+  font-size: 1.3rem;
+  color: white;
+  background-color: rgb(19, 37, 35);
 }
-.payment-button{
-    padding:1rem;
-    font-size:1.1rem;
-    color:white;
-    background-color: rgb(39, 53, 13); 
-    cursor: pointer;   
+.payment-button {
+  padding: 1rem;
+  font-size: 1.1rem;
+  color: white;
+  background-color: rgb(39, 53, 13);
+  cursor: pointer;
+  margin-top: 1rem;
 }
-.payment-button:hover{
-    transform: scale(1.05);
+.payment-button:hover {
+  transform: scale(1.05);
+}
+@media only screen and (max-width: 760px) {
+  .empty-cart {
+    font-size: 1.2rem;
+  }
 }
