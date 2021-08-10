@@ -1,4 +1,3 @@
-import './App.css';
 import { useEffect, useState } from 'react';
 import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Home from './components/Home.js';
@@ -13,8 +12,9 @@ function App() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    const temp = getItems(); // this may just be a fetch call (async)
-    setItems(temp); // will be temp.then() in case of async
+    getItems().then((res) => {
+      setItems(res);
+    });
   }, []);
 
   function cartSub(signal, objKey) {
@@ -36,7 +36,9 @@ function App() {
     <Router>
       <div className="App">
         <nav className="nav-bar">
-          <Link to="/"><span>Home</span></Link>
+          <Link to="/">
+            <span>Home</span>
+          </Link>
           <ul className="nav-bar-list">
             <li>
               <Link to="/about">About</Link>
@@ -78,7 +80,7 @@ function App() {
 
 export default App;
 
-function getItems() {
+async function getItems() {
   return [
     {
       name: 'cup',
