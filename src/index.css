@@ -5,6 +5,7 @@
 body {
   background-color: hsl(70, 24%, 70%);
   text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .nav-bar {
@@ -16,9 +17,8 @@ body {
 }
 .nav-bar-list {
   display: flex;
-}
-.nav-bar ul {
   list-style: none;
+
 }
 .nav-bar a {
   padding: 1rem;

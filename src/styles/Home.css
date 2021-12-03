@@ -1,16 +1,17 @@
-.home-content {
-  padding: 1rem;
-}
+
 .home-heading {
-  color: black;
-  text-shadow: 3px 3px 3px white;
-  font-size: 2rem;
+  color: hsl(0, 0%, 5%);
+  text-shadow: 1px 1px 3px white;
+  font-size: 3rem;
   padding: 0.5rem;
 }
+
 .home-image {
-  border: 3px solid black;
+  box-shadow: 0 0 0.3rem 0 hsl(0, 0%, 10%);
   max-width: 70%;
   height: auto;
+  /* max-height: 70vmin;
+  width: auto; */
 }
 .home-intro {
   padding: 1rem;
@@ -18,7 +19,9 @@
   font-size: 2rem;
   color: white;
   background-color: rgb(32, 61, 31);
-  border: 1px solid black;
+  box-shadow: 0 0 0.1rem 0rem  hsl(118, 33%, 10%);
+  border-radius: 5px;
+
 }
 
 @media only screen and (max-width: 760px) {
