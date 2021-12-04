@@ -3,7 +3,10 @@ import '../styles/Item.css';
 function Item({ item, images, cartSub }) {
   return (
     <div className="item">
+      <div className="item-img-container">
       <img src={images[item.name]} alt="item" className="item-img" />
+
+      </div>
       <div className="item-description">
         <span className="item-name">{item.name}</span>
         <span className="item-price">
@@ -44,7 +47,7 @@ function Item({ item, images, cartSub }) {
     if (count === 0) {
       return null;
     }
-    return <span className="items-in-cart"> ({count} in cart)</span>;
+    return <span className="items-in-cart"> ({count})</span>;
   }
 }
 

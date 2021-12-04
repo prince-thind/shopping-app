@@ -1,11 +1,14 @@
 .shop-heading {
   padding: 1rem;
-  margin: 1rem;
+  margin: 1rem auto;
   background-color: rgb(32, 61, 31);
   color: white;
+  box-shadow: 0.2rem 0.2rem 0.2rem 0rem hsl(118, 33%, 10%);
+  width: fit-content;
+
 }
 .items {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 2rem;
