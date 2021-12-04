@@ -16,10 +16,10 @@
   color: white;
   background-color: rgb(32, 61, 31);
   box-shadow: 0 0 0.1rem 0rem hsl(118, 33%, 10%);
-  border-radius: 5px;
+  /* border-radius: 5px; */
   width: max-content;
   margin: 1rem auto;
-  border-radius: 10rem;
+  /* border-radius: 10rem; */
   display: block;
   text-decoration: none;
 }

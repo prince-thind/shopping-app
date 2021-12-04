@@ -1,16 +1,15 @@
-import '../styles/Item.css';
+import "../styles/Item.css";
 
-function Item({ item, images, cartSub }) {
+function Item({ item, cartSub }) {
   return (
     <div className="item">
       <div className="item-img-container">
-      <img src={images[item.name]} alt="item" className="item-img" />
-
+        <img src={item.image} alt="item" className="item-img" />
       </div>
       <div className="item-description">
         <span className="item-name">{item.name}</span>
         <span className="item-price">
-          {' '}
+          {" "}
           {item.currency}
           {item.price}
         </span>
@@ -26,10 +25,10 @@ function Item({ item, images, cartSub }) {
   );
 
   function increaseCount() {
-    cartSub('increment', item.key);
+    cartSub("increment", item.key);
   }
   function decreaseCount() {
-    cartSub('decrement', item.key);
+    cartSub("decrement", item.key);
   }
 
   function RemoveButton({ count }) {

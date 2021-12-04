@@ -11,7 +11,7 @@ function Shop(props) {
 
   function Items() {
     return <div className='items'>{props.items.map((item) => {
-      return <Item key={item.key} item={item} images={props.images} cartSub={props.cartSub} />;
+      return <Item key={item.key} item={item} cartSub={props.cartSub} />;
     })}</div>
   }
 }

@@ -4,9 +4,9 @@ import Home from './pages/Home.js';
 import About from './pages/About.js';
 import Shop from './pages/Shop.js';
 import Cart from './pages/Cart.js';
-import images from './images/images.js';
-import uniqid from 'uniqid';
 import _ from 'loadsh';
+import getItems from './lib/getItems.js';
+import homeImage from './images/home.jpg'
 
 function App() {
   const [items, setItems] = useState([]);
@@ -60,13 +60,13 @@ function App() {
         <main className="main">
           <Switch>
             <Route path="/" exact>
-              <Home img={images['home']} />
+              <Home img={homeImage} />
             </Route>
             <Route path="/about" exact>
               <About />
             </Route>
             <Route path="/shop" exact>
-              <Shop images={images} items={items} cartSub={cartSub} />
+              <Shop items={items} cartSub={cartSub} />
             </Route>
             <Route path="/cart" exact>
               <Cart items={items} cartSub={cartSub} />
@@ -81,49 +81,3 @@ function App() {
 
 export default App;
 
-async function getItems() {
-  return [
-    {
-      name: 'cup',
-      key: uniqid(),
-      price: '5',
-      count: 0,
-      currency: '$',
-    },
-    {
-      name: 'feather',
-      price: '10',
-      key: uniqid(),
-      count: 0,
-      currency: '$',
-    },
-    {
-      name: 'griffin',
-      key: uniqid(),
-      price: '50',
-      count: 0,
-      currency: '$',
-    },
-    {
-      name: 'jar',
-      key: uniqid(),
-      price: '5',
-      count: 0,
-      currency: '$',
-    },
-    {
-      name: 'rings',
-      key: uniqid(),
-      price: '75',
-      count: 0,
-      currency: '$',
-    },
-    {
-      name: 'watch',
-      key: uniqid(),
-      price: '100',
-      count: 0,
-      currency: '$',
-    },
-  ];
-}
