@@ -1,23 +1,18 @@
 .cart-item {
   color: white;
-  background-color: hsl(118, 33%, 10%);
-  border-bottom: 5px solid black;
+  background: linear-gradient(hsl(118, 33%, 25%), hsl(118, 33%, 15%));
 }
 .cart-item-name {
   padding-top: 1rem;
-  /* background-color: hsl(0, 25%, 17%); */
 }
 .cart-item-count {
   padding: 0.5rem;
+  display: block;
 }
-.cart-item-buttons{
-    border:1px solid black;
-  /* background-color: hsl(118, 30%, 15%); */
-  background-color: hsl(0, 25%, 17%);
-
-
+.cart-item-buttons {
+  background-color: hsl(0, 0%, 9%);
+  padding: 0 0.5rem;
 }
-.cart-item-buttons button:hover{
-    transform: scale(1.1);
+.cart-item-buttons button:hover {
+  background-color: hsl(0, 0%, 50%);
 }
-
