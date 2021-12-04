@@ -1,4 +1,4 @@
-import CartItem from './CartItem.js';
+import CartItem from '../components/CartItem.js';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Cart.css';

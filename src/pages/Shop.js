@@ -1,4 +1,4 @@
-import Item from './Item.js';
+import Item from '../components/Item';
 import '../styles/Shop.css'
 
 function Shop(props) {
