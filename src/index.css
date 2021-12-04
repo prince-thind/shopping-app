@@ -38,7 +38,8 @@ main{
 }
 
 .footer {
-  background-color: black;
+  background-color: hsl(0, 0%, 9%);
+
   color: white;
   padding: 0.5rem;
   border-top: 1px solid white;

@@ -73,7 +73,7 @@ function App() {
             </Route>
           </Switch>
         </main>
-        <footer class="footer">CopyRight &copy; Prince Thind</footer>
+        <footer className="footer">CopyRight &copy; Prince Thind</footer>
       </div>
     </Router>
   );
