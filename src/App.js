@@ -1,32 +1,34 @@
-import { useEffect, useState } from 'react';
-import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import Home from './pages/Home.js';
-import About from './pages/About.js';
-import Shop from './pages/Shop.js';
-import Cart from './pages/Cart.js';
-import _ from 'loadsh';
-import getItems from './lib/getItems.js';
-import homeImage from './images/home.jpg'
+import { useEffect, useState } from "react";
+import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Home from "./pages/Home.js";
+import About from "./pages/About.js";
+import Shop from "./pages/Shop.js";
+import Cart from "./pages/Cart.js";
+import getItems from "./lib/getItems.js";
+import homeImage from "./images/home.jpg";
 
 function App() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    getItems().then((res) => {
-      setItems(res);
-    });
+    fetchFromAPI();
+
+    async function fetchFromAPI() {
+      const response = await getItems();
+      setItems(response);
+    }
   }, []);
 
   function cartSub(signal, objKey) {
-    const tempArr = _.cloneDeep(items);
+    const tempArr = items.map((obj) => ({ ...obj }));
     const tempObj = tempArr.find((obj) => {
       return obj.key === objKey;
     });
 
-    if (signal === 'increment') {
+    if (signal === "increment") {
       tempObj.count++;
     }
-    if (signal === 'decrement') {
+    if (signal === "decrement") {
       tempObj.count--;
     }
     setItems(tempArr);
@@ -80,4 +82,3 @@ function App() {
 }
 
 export default App;
-
