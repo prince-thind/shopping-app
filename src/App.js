@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages/Home.js";
 import About from "./pages/About.js";
 import Shop from "./pages/Shop.js";
 import Cart from "./pages/Cart.js";
+import Navbar from './components/NavBar';
 import getItems from "./lib/getItems.js";
 import homeImage from "./images/home.jpg";
 
@@ -34,31 +35,14 @@ function App() {
     setItems(tempArr);
   }
 
+  function getItemCount(){
+    return items.reduce((acc,item)=>acc+item.count,0);
+  }
+
   return (
     <Router>
       <div className="App">
-        <nav className="nav-bar">
-          <Link to="/">
-            <span>Home</span>
-          </Link>
-          <ul className="nav-bar-list">
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/shop">Shop</Link>
-            </li>
-            <li>
-              <Link to="/cart">
-                Cart(
-                {items.reduce((a, b) => {
-                  return a + b.count;
-                }, 0)}
-                )
-              </Link>
-            </li>
-          </ul>
-        </nav>
+        <Navbar count={getItemCount()}/>
         <main className="main">
           <Switch>
             <Route path="/" exact>
