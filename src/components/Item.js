@@ -13,12 +13,12 @@ function Item({ item, cartSub }) {
           {item.currency}
           {item.price}
         </span>
-        <ItemsInCart count={item.count} />
       </div>
       <div className="shop-buttons">
-        <button className="cart-add-button button" onClick={increaseCount}>
-          Add to Cart
-        </button>
+        <AddButton count={item.count} />
+
+        <ItemsInCart count={item.count} />
+
         <RemoveButton count={item.count} />
       </div>
     </div>
@@ -31,14 +31,29 @@ function Item({ item, cartSub }) {
     cartSub("decrement", item.key);
   }
 
+  function AddButton({ count }) {
+    if (count === 0) {
+      return (
+        <button className="cart-add-button-full button" onClick={increaseCount}>
+          Add To Cart
+        </button>
+      );
+    }
+    return (
+      <button className="cart-button button" onClick={increaseCount}>
+        +
+      </button>
+    );
+  }
+
   function RemoveButton({ count }) {
     if (count === 0) {
       return null;
     }
 
     return (
-      <button className="cart-remove-button button" onClick={decreaseCount}>
-        remove
+      <button className="cart-button button" onClick={decreaseCount}>
+        -
       </button>
     );
   }
@@ -46,7 +61,7 @@ function Item({ item, cartSub }) {
     if (count === 0) {
       return null;
     }
-    return <span className="items-in-cart"> ({count})</span>;
+    return <span className="items-in-cart"> {count}</span>;
   }
 }
 
