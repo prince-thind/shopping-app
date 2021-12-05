@@ -1,10 +1,12 @@
 import CartItem from '../components/CartItem.js';
-import React from 'react';
 import { Link } from 'react-router-dom';
+import React from 'react';
 import '../styles/Cart.css';
+import Payment from '../components/Payment.js';
 
 function Cart(props) {
   const totalValue = findTotal(props.items);
+
 
   return (
     <div className="cart-content">
@@ -25,7 +27,7 @@ function Cart(props) {
         <h2 className='cart-item-heading'>Cart Items </h2>
         <Items />
         <div className='cart-total'> Cart Total: {props.items[1].currency}{totalValue}</div>
-        <button className='payment-button' onClick={proceedPayment}>Proceed to Payment</button>
+        <Payment />
       </React.Fragment>
     );
   }
@@ -46,9 +48,7 @@ function Cart(props) {
       return acc + item.price * item.count;
     }, 0);
   }
-  function proceedPayment(items){
-    console.log('redirected to payment portal');
-  }
+
 }
 
 export default Cart;
