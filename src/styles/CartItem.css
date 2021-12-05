@@ -47,3 +47,12 @@
 .cart-item-buttons button:hover {
   background-color: hsl(0, 0%, 50%);
 }
+
+@media only screen and (max-width: 760px) {
+  .cart-item-content{
+    font-size: 1rem;
+  }
+  .cart-item-buttons {
+    padding: 0 ;
+  }
+}
