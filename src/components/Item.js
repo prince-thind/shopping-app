@@ -3,8 +3,8 @@ import getNormalName from "../lib/getNormaName";
 
 function Item({ item, cartSub }) {
   return (
-    <div className="item">
-      <div className="item-img-container">
+    <div className="item photo-shadow">
+      <div className="item-img-container flex-center">
         <img src={item.image} alt="item" className="item-img" />
       </div>
       <div className="item-description">
@@ -15,12 +15,10 @@ function Item({ item, cartSub }) {
           {item.price}
         </span>
       </div>
-      <div className="shop-buttons">
-        <AddButton count={item.count} />
-
-        <ItemsInCart count={item.count} />
-
+      <div className="flex-center item-buttons">
         <RemoveButton count={item.count} />
+        <ItemsInCart count={item.count} />
+        <AddButton count={item.count} />
       </div>
     </div>
   );
@@ -35,13 +33,16 @@ function Item({ item, cartSub }) {
   function AddButton({ count }) {
     if (count === 0) {
       return (
-        <button className="cart-add-button-full button" onClick={increaseCount}>
+        <button className="item-button-full button" onClick={increaseCount}>
           Add To Cart
         </button>
       );
     }
     return (
-      <button className="cart-button button" onClick={increaseCount}>
+      <button
+        className="item-button flex-center button"
+        onClick={increaseCount}
+      >
         +
       </button>
     );
@@ -53,7 +54,10 @@ function Item({ item, cartSub }) {
     }
 
     return (
-      <button className="cart-button button" onClick={decreaseCount}>
+      <button
+        className="item-button flex-center button"
+        onClick={decreaseCount}
+      >
         -
       </button>
     );

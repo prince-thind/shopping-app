@@ -2,7 +2,7 @@ import "../styles/About.css";
 function About() {
   return (
     <div className="about-section">
-      <h2 className="about-heading">Foo Shop</h2>
+      <h2 className="material-box">Foo Shop</h2>
       <p className="about-para">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis totam
         quidem sint ex labore et, cupiditate eaque magni ad velit exercitationem

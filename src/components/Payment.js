@@ -24,7 +24,7 @@ function Payment() {
 function PaymentModal({ visible, setPaymentVisible }) {
   if (visible)
     return (
-      <section className="payment-modal modal">
+      <section className="payment-modal flex-center">
         <div className="payment-main">
           <div className="payment-heading">
             <button
@@ -38,16 +38,17 @@ function PaymentModal({ visible, setPaymentVisible }) {
             <div className="payment-title">Payment</div>
           </div>
           <p>
-            Thank you for using This dummy portal, your data has been sent to some 'supposed' server for processing! Have a great day valued user!
+            Thank you for using This dummy portal, your data has been sent to
+            some 'supposed' server for processing! Have a great day valued user!
           </p>
           <button
-              className="payment-understood"
-              onClick={() => {
-                setPaymentVisible(false);
-              }}
-            >
-              Got it!
-            </button>
+            className="payment-understood"
+            onClick={() => {
+              setPaymentVisible(false);
+            }}
+          >
+            Got it!
+          </button>
         </div>
       </section>
     );

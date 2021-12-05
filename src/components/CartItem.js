@@ -4,24 +4,28 @@ import getNormalName from "../lib/getNormaName";
 function CartItem({ item, cartSub }) {
   return (
     <div className="cart-item">
-      <div className="cart-item-image-container">
-        <img src={item.image} alt="cart item" className="cart-item-image" />
+      <div className="cart-item-image-container flex-center">
+        <img
+          src={item.image}
+          alt="cart item"
+          className="cart-item-image photo-shadow"
+        />
       </div>
       <div className="cart-item-content">
-        <div className="cart-item-name">{getNormalName(item.name)}</div>
-        <div className="cart-item-price">
+        <div>{getNormalName(item.name)}</div>
+        <div>
           {item.price}
           {item.currency}
         </div>
       </div>
 
       <div className="cart-capacity">
-        <div className="cart-item-buttons">
-          <button className="cart-remove-button button" onClick={decreaseCount}>
+        <div className="cart-item-buttons flex-center">
+          <button className="flex-center button" onClick={decreaseCount}>
             -
           </button>
           <div className="cart-item-count">{item.count}</div>
-          <button className="cart-add-button button" onClick={increaseCount}>
+          <button className="flex-center button" onClick={increaseCount}>
             +
           </button>
         </div>

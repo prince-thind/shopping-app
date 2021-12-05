@@ -1,14 +1,10 @@
-.modal {
+.payment-modal {
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   background-color: hsla(0, 0%, 90%, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
 }
 
 .payment-main {
@@ -29,10 +25,10 @@
   padding-bottom: 1rem;
   font-size: 1.5rem;
 }
-.payment-understood{
-    padding:0.5rem 1rem;
-    margin-top:1rem;
+.payment-understood {
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
 }
-.payment-understood:hover{
-    cursor: pointer;
+.payment-understood:hover {
+  cursor: pointer;
 }

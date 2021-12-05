@@ -1,15 +1,11 @@
 .item {
   margin: 0 auto;
-  color: white;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 0 0.3rem 0 hsl(0, 0%, 10%);
   background-color: hsl(0, 0%, 9%);
 }
 .item-img-container {
   flex: 1;
-  display: grid;
-  align-items: center;
   background-color: hsl(118, 13%, 30%);
 }
 .item-img {
@@ -17,46 +13,27 @@
   box-shadow: 0 0 0.3rem 0 hsl(0, 0%, 10%);
 }
 .item-description {
-  padding: 0.5rem;
+  padding-top: 0.5rem;
   font-size: 1.2rem;
   color: rgb(218, 218, 218);
 }
 
-.shop-buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.cart-button {
+.item-button {
   width: 2.5rem;
   height: 2.5rem;
   font-weight: bolder;
   font-size: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
-.cart-add-button-full {
+.item-button-full {
   height: 2.5rem;
   width: fit-content;
   font-weight: 400;
   font-size: 1rem;
 }
-.button {
-  padding: 0.5rem;
-  margin: 0.5rem;
-  /* flex: 1; */
-  background-color: hsl(0, 0%, 75%);
-}
-.button:hover {
-  background-color: hsl(0, 0%, 55%);
 
-  cursor: pointer;
-}
 
 @media only screen and (max-width: 760px) {
   .item-description {
-    padding: 0.5rem;
     font-size: 1rem;
   }
 }

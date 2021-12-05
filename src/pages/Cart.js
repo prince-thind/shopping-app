@@ -1,32 +1,31 @@
-import CartItem from '../components/CartItem.js';
 import { Link } from 'react-router-dom';
 import React from 'react';
 import '../styles/Cart.css';
+import CartItem from '../components/CartItem.js';
 import Payment from '../components/Payment.js';
 
 function Cart(props) {
   const totalValue = findTotal(props.items);
 
-
   return (
     <div className="cart-content">
-      <CartCapacityLogic />
+      <CartCapacityLogic totalValue={totalValue}/>
     </div>
   );
 
-  function CartCapacityLogic() {
+  function CartCapacityLogic({totalValue}) {
     if (totalValue === 0) {
       return (
         <div className='empty-cart'>
-          Cart is empty, Consider adding items from <Link to="/shop">shop</Link>{' '}
+          Cart is empty, Consider adding items from <Link to="/shop">shop</Link>.{' '}
         </div>
       );
     }
     return (
       <React.Fragment>
-        <h2 className='cart-item-heading'>Cart Items </h2>
+        <h2 className='material-box'>Cart Items </h2>
         <Items />
-        <div className='cart-total'> Cart Total: {props.items[1].currency}{totalValue}</div>
+        <div className='cart-total material-box'> Cart Total: {props.items[1].currency}{totalValue}</div>
         <Payment />
       </React.Fragment>
     );
