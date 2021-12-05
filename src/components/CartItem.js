@@ -1,4 +1,5 @@
 import "../styles/CartItem.css";
+import getNormalName from "../lib/getNormaName";
 
 function CartItem({ item, cartSub }) {
   return (
@@ -7,9 +8,9 @@ function CartItem({ item, cartSub }) {
         <img src={item.image} alt="cart item" className="cart-item-image" />
       </div>
       <div className="cart-item-content">
-        <div className="cart-item-name">{item.name}</div>
+        <div className="cart-item-name">{getNormalName(item.name)}</div>
         <div className="cart-item-price">
-       {item.price}
+          {item.price}
           {item.currency}
         </div>
       </div>

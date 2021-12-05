@@ -1,4 +1,5 @@
 import "../styles/Item.css";
+import getNormalName from "../lib/getNormaName";
 
 function Item({ item, cartSub }) {
   return (
@@ -7,7 +8,7 @@ function Item({ item, cartSub }) {
         <img src={item.image} alt="item" className="item-img" />
       </div>
       <div className="item-description">
-        <span className="item-name">{item.name}</span>
+        <span className="item-name">{getNormalName(item.name)}</span>
         <span className="item-price">
           {" "}
           {item.currency}
