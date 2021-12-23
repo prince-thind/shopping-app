@@ -7,7 +7,6 @@ async function getItems() {
 
   for (let i = 0; i < numberOfItems; i++) {
     const item = generateItem();
-    console.log(item);
     items.push(item);
   }
 
@@ -15,7 +14,7 @@ async function getItems() {
 
   function generateItem() {
     const item = {};
-    item.name = faker.commerce.productName();
+    item.name = faker.fake("{{commerce.productAdjective}} {{commerce.product}}");
     item.key = uniqid();
     item.price = faker.commerce.price(100, 200);
     item.count = 0;
