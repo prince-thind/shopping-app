@@ -14,12 +14,14 @@ async function getItems() {
 
   function generateItem() {
     const item = {};
-    item.name = faker.fake("{{commerce.productAdjective}} {{commerce.product}}");
+    const fakeAdjective = faker.commerce.productAdjective();
+    const fakeProductName = faker.commerce.product();
+    item.name = `${fakeAdjective} ${fakeProductName}`;
     item.key = uniqid();
     item.price = faker.commerce.price(100, 200);
     item.count = 0;
     item.currency = "$";
-    item.image = faker.image.image(null, null, true);
+    item.image = faker.image.unsplash.image(null, null, fakeProductName);
     return item;
   }
 }
