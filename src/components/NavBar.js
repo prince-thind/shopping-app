@@ -1,45 +1,29 @@
 import { Link } from "react-router-dom";
-import React, { useState } from "react";
-
+import React from "react";
+import { useLocation } from "react-router-dom";
 import "../styles/Navbar.css";
 
 function Navbar({ count }) {
-  const [activePage, setActivePage] = useState("home");
+  const activePage = useLocation().pathname;
 
   return (
     <nav className="nav-bar">
-      <Page
-        activePage={activePage}
-        currentPage="home"
-        setActivePage={setActivePage}
-      >
+      <Page activePage={activePage} currentPage="/">
         <Link to="/">Home</Link>
       </Page>
       <ul className="nav-bar-list">
         <li>
-          <Page
-            activePage={activePage}
-            currentPage="about"
-            setActivePage={setActivePage}
-          >
+          <Page activePage={activePage} currentPage="/about">
             <Link to="/about">About</Link>
           </Page>
         </li>
         <li>
-          <Page
-            activePage={activePage}
-            currentPage="shop"
-            setActivePage={setActivePage}
-          >
+          <Page activePage={activePage} currentPage="/shop">
             <Link to="/shop">Shop</Link>
           </Page>
         </li>
         <li>
-          <Page
-            activePage={activePage}
-            currentPage="cart"
-            setActivePage={setActivePage}
-          >
+          <Page activePage={activePage} currentPage="/cart">
             <Link to="/cart">
               Cart(
               {count})
@@ -51,17 +35,10 @@ function Navbar({ count }) {
   );
 }
 
-function Page({ activePage, currentPage, setActivePage, children }) {
+function Page({ activePage, currentPage, children }) {
+  console.log(currentPage,activePage)
   const pageStatus = activePage === currentPage ? "active-page" : "";
-  return (
-    <div onClick={handleClick} className={pageStatus}>
-      {children}
-    </div>
-  );
-
-  function handleClick() {
-    setActivePage(currentPage);
-  }
+  return <div className={pageStatus}>{children}</div>;
 }
 
 export default Navbar;
