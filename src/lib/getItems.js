@@ -1,7 +1,7 @@
 import uniqid from "uniqid";
 import faker from "faker";
 
-async function getItems() {
+function getItems() {
   const items = [];
   const numberOfItems = Math.trunc(Math.random() * 10 + 5);
 

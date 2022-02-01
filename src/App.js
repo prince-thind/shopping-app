@@ -1,46 +1,38 @@
-import { useEffect, useState } from "react";
 import { HashRouter as Router } from "react-router-dom";
 
-import Navbar from './components/NavBar';
-import getItems from "./lib/getItems.js";
+import Navbar from "./components/NavBar";
 import MainComponent from "./components/MainComponent.js";
+import { useSelector } from "react-redux";
+import {
+  itemAdded,
+  itemRemoved,
+  itemsSelector,
+} from "./features/items/itemsSlice";
+import { useDispatch } from "react-redux";
 
 function App() {
-  const [items, setItems] = useState([]);
-
-  useEffect(() => {
-    fetchFromAPI();
-
-    async function fetchFromAPI() {
-      const response = await getItems();
-      setItems(response);
-    }
-  }, []);
+  // const [items, setItems] = useState([]);
+  const items = useSelector(itemsSelector);
+  const dispath = useDispatch();
 
   function cartSub(signal, objKey) {
-    const tempArr = items.map((obj) => ({ ...obj }));
-    const tempObj = tempArr.find((obj) => {
-      return obj.key === objKey;
-    });
-
     if (signal === "increment") {
-      tempObj.count++;
+      dispath(itemAdded(objKey));
     }
     if (signal === "decrement") {
-      tempObj.count--;
+      dispath(itemRemoved(objKey));
     }
-    setItems(tempArr);
   }
 
-  function getItemCount(){
-    return items.reduce((acc,item)=>acc+item.count,0);
+  function getItemCount() {
+    return items.reduce((acc, item) => acc + item.count, 0);
   }
 
   return (
     <Router>
       <div className="App">
-        <Navbar count={getItemCount()}/>
-       <MainComponent cartSub={cartSub} items={items}/>
+        <Navbar count={getItemCount()} />
+        <MainComponent cartSub={cartSub} items={items} />
         <footer className="footer">CopyRight &copy; Prince Thind</footer>
       </div>
     </Router>
