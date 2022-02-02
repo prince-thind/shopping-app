@@ -36,7 +36,7 @@ function Cart(props) {
         {props.items
           .filter((item) => item.count > 0)
           .map((item) => {
-            return <CartItem key={item.key} item={item} cartSub={props.cartSub} />;
+            return <CartItem key={item.key} item={item} />;
           })}
       </div>
     );

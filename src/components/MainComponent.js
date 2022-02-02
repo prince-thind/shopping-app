@@ -6,7 +6,7 @@ import Shop from "../pages/Shop.js";
 import Cart from "../pages/Cart.js";
 import homeImage from "../images/home.jpg";
 
-function MainComponent({ cartSub, items }) {
+function MainComponent( {items} ) {
   return (
     <main className="main">
       <Switch>
@@ -17,10 +17,10 @@ function MainComponent({ cartSub, items }) {
           <About />
         </Route>
         <Route path="/shop" exact>
-          <Shop items={items} cartSub={cartSub} />
+          <Shop items={items} />
         </Route>
         <Route path="/cart" exact>
-          <Cart items={items} cartSub={cartSub} />
+          <Cart items={items} />
         </Route>
       </Switch>
     </main>

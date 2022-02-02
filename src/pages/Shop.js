@@ -13,7 +13,7 @@ function Shop(props) {
     return (
       <div className="items">
         {props.items.map((item) => {
-          return <Item key={item.key} item={item} cartSub={props.cartSub} />;
+          return <Item key={item.key} item={item}  />;
         })}
       </div>
     );

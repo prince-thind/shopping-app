@@ -1,7 +1,11 @@
 import "../styles/Item.css";
 import getNormalName from "../lib/getNormaName";
+import { useDispatch } from "react-redux";
+import {itemAdded, itemRemoved} from '../features/items/itemsSlice';
 
-function Item({ item, cartSub }) {
+function Item({ item }) {
+  const dispatch=useDispatch();
+
   return (
     <div className="item photo-shadow">
       <div className="item-img-container flex-center">
@@ -24,10 +28,11 @@ function Item({ item, cartSub }) {
   );
 
   function increaseCount() {
-    cartSub("increment", item.key);
+    dispatch(itemAdded(item.key))
   }
   function decreaseCount() {
-    cartSub("decrement", item.key);
+    dispatch(itemRemoved(item.key))
+
   }
 
   function AddButton({ count }) {
