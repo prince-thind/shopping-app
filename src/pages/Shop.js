@@ -1,7 +1,7 @@
-import Item from "../components/Item";
+import Item from "../features/items/Item";
 import "../styles/Shop.css";
 
-function Shop(props) {
+function Shop({items}) {
   return (
     <div className="shop-content">
       <h2 className="shop-heading material-box"> Items</h2>
@@ -12,7 +12,7 @@ function Shop(props) {
   function Items() {
     return (
       <div className="items">
-        {props.items.map((item) => {
+        {items.map((item) => {
           return <Item key={item.key} item={item}  />;
         })}
       </div>

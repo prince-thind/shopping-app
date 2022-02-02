@@ -42,7 +42,7 @@ main {
   padding: 0.5rem;
   margin: 0.5rem;
   background-color: rgb(32, 61, 31);
-  color:white;
+  color: white;
 }
 .button:hover {
   background-color: hsl(118, 33%, 10%);

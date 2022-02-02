@@ -1,2 +1,2 @@
-# shopping-app-react
-a simple react app for shopping.
+# shopping-app
+a simple react+redux app for shopping.

@@ -1,10 +1,9 @@
-import "../styles/Item.css";
-import getNormalName from "../lib/getNormaName";
+import "../../styles/Item.css";
 import { useDispatch } from "react-redux";
-import {itemAdded, itemRemoved} from '../features/items/itemsSlice';
+import { itemAdded, itemRemoved } from "./itemsSlice";
 
 function Item({ item }) {
-  const dispatch=useDispatch();
+  const dispatch = useDispatch();
 
   return (
     <div className="item photo-shadow">
@@ -26,14 +25,6 @@ function Item({ item }) {
       </div>
     </div>
   );
-
-  function increaseCount() {
-    dispatch(itemAdded(item.key))
-  }
-  function decreaseCount() {
-    dispatch(itemRemoved(item.key))
-
-  }
 
   function AddButton({ count }) {
     if (count === 0) {
@@ -67,12 +58,24 @@ function Item({ item }) {
       </button>
     );
   }
+  
   function ItemsInCart({ count }) {
     if (count === 0) {
       return null;
     }
     return <span className="items-in-cart"> {count}</span>;
   }
+
+  function increaseCount() {
+    dispatch(itemAdded(item.key));
+  }
+  function decreaseCount() {
+    dispatch(itemRemoved(item.key));
+  }
+}
+
+function getNormalName(str) {
+  return str[0].toUpperCase() + str.slice(1);
 }
 
 export default Item;

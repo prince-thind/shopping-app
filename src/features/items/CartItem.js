@@ -1,6 +1,5 @@
-import "../styles/CartItem.css";
-import getNormalName from "../lib/getNormaName";
-import { itemAdded, itemRemoved } from "../features/items/itemsSlice";
+import "../../styles/CartItem.css";
+import { itemAdded, itemRemoved } from "./itemsSlice";
 import { useDispatch } from "react-redux";
 
 function CartItem({ item }) {
@@ -44,6 +43,9 @@ function CartItem({ item }) {
   }
   function decreaseCount() {
     dispatch(itemRemoved(item.key));
+  }
+  function getNormalName(str) {
+    return str[0].toUpperCase() + str.slice(1);
   }
 }
 
