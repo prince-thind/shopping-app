@@ -1,27 +1,22 @@
-import uniqid from "uniqid";
-import faker from "faker";
 
-function getItems() {
-  const items = [];
-  const numberOfItems = Math.trunc(Math.random() * 10 + 5);
+function getItems(items) {
+  const result = [];
 
-  for (let i = 0; i < numberOfItems; i++) {
-    const item = generateItem();
-    items.push(item);
+  for (let i = 0; i < items.length; i++) {
+    const item = generateItem(items[i]);
+    result.push(item);
   }
 
-  return items;
+  return result;
 
-  function generateItem() {
+  function generateItem(input) {
     const item = {};
-    const fakeAdjective = faker.commerce.productAdjective();
-    const fakeProductName = faker.commerce.product();
-    item.name = `${fakeAdjective} ${fakeProductName}`;
-    item.key = uniqid();
-    item.price = faker.commerce.price(100, 200);
+    item.name = input.title;
+    item.key = input.id;
+    item.price = input.price;
     item.count = 0;
     item.currency = "$";
-    item.image = faker.image.unsplash.image(null, null, fakeProductName);
+    item.image = input.image;
     return item;
   }
 }

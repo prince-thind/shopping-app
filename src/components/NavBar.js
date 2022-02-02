@@ -36,7 +36,6 @@ function Navbar({ count }) {
 }
 
 function Page({ activePage, currentPage, children }) {
-  console.log(currentPage,activePage)
   const pageStatus = activePage === currentPage ? "active-page" : "";
   return <div className={pageStatus}>{children}</div>;
 }

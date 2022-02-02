@@ -1,12 +1,22 @@
 import { HashRouter as Router } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+
 
 import Navbar from "./components/NavBar";
 import Main from "./components/Main.js";
-import { itemsSelector } from "./features/items/itemsSlice";
+import { itemsSelector, fetchItems } from "./features/items/itemsSlice";
+
+
 
 function App() {
   const items = useSelector(itemsSelector);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchItems())
+  }, []);
 
   return (
     <Router>
