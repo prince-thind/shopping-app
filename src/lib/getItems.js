@@ -2,39 +2,36 @@ import { randAccessory, randUuid } from '@ngneat/falso';
 import axios from 'axios';
 
 async function getItems() {
-  const result = [];
+  let result = [];
 
   for (let i = 0; i < 15; i++) {
-    const item = await generateItem();
+    const item = generateItem();
     result.push(item);
   }
 
+  result=await Promise.all(result);
   return result;
 
   async function generateItem() {
     const item = {};
     item.name = randAccessory();
-    item.key = randUuid();
+    item.key = randUuid(); //todo
     item.price = Math.trunc(Math.random()*(100)+50);
     item.count = 0;
     item.currency = "$";
-    item.image = await getAxiosImage(item.name);
+    item.image = await getImageSrc(item.name);
     return item;
   }
 
-  async function getAxiosImage(name){
-    const URL='https://pixabay.com/api/';
+  async function getImageSrc(name){
+    const URL=process.env.REACT_APP_FETCH_URL; //development
     const response=await axios.get(URL,{
       params: {
-        key: process.env.REACT_APP_API_KEY,
         q:name.replaceAll(' ','+'),
-        per_page:10,
-        safesearch:true,
-        image_type:'photo',
       },
     });
-    const images=response.data.hits.map(i=>i.webformatURL);
-    return images[Math.trunc(Math.random()*images.length)];
+    const src=response.data;
+    return src;
   }
 }
 
