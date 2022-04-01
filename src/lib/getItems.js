@@ -29,6 +29,8 @@ async function getItems() {
         key: process.env.REACT_APP_API_KEY,
         q:name.replaceAll(' ','+'),
         per_page:10,
+        safesearch:true,
+        image_type:'photo',
       },
     });
     const images=response.data.hits.map(i=>i.webformatURL);

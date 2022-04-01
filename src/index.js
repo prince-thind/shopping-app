@@ -23,3 +23,4 @@ ReactDOM.render(
 // implement image fetch api
 // create a server for hiding the apis
 //seperate page for each item
+// add search feature

@@ -33,6 +33,14 @@ const itemsSlice = createSlice({
     builder.addCase(fetchItems.fulfilled, (state, action) => {
       const result = action.payload;
       state.items.push(...result);
+      state.status = "fulfilled";
+    });
+    builder.addCase(fetchItems.pending, (state, action) => {
+      state.status = "pending";
+    });
+
+    builder.addCase(fetchItems.rejected, (state, action) => {
+      state.status = "rejected";
     });
   },
 });
@@ -42,6 +50,9 @@ export { fetchItems };
 
 export function itemsSelector(state) {
   return state.items.items;
+}
+export function statusSelector(state) {
+  return state.items.status;
 }
 
 export default itemsSlice.reducer;
