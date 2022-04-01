@@ -1,43 +1,42 @@
-import { Link } from "react-router-dom";
-import React from "react";
-import { useLocation } from "react-router-dom";
 import "../styles/Navbar.css";
+import React from "react";
+import { useLocation,Link } from "react-router-dom";
 
 function Navbar({ count }) {
   const activePage = useLocation().pathname;
 
   return (
     <nav className="nav-bar">
-      <Page activePage={activePage} currentPage="/">
+      <PageLink activePage={activePage} linkedPage="/">
         <Link to="/">Home</Link>
-      </Page>
+      </PageLink>
       <ul className="nav-bar-list">
         <li>
-          <Page activePage={activePage} currentPage="/about">
+          <PageLink activePage={activePage} linkedPage="/about">
             <Link to="/about">About</Link>
-          </Page>
+          </PageLink>
         </li>
         <li>
-          <Page activePage={activePage} currentPage="/shop">
+          <PageLink activePage={activePage} linkedPage="/shop">
             <Link to="/shop">Shop</Link>
-          </Page>
+          </PageLink>
         </li>
         <li>
-          <Page activePage={activePage} currentPage="/cart">
+          <PageLink activePage={activePage} linkedPage="/cart">
             <Link to="/cart">
               Cart(
               {count})
             </Link>
-          </Page>
+          </PageLink>
         </li>
       </ul>
     </nav>
   );
 }
 
-function Page({ activePage, currentPage, children }) {
-  const pageStatus = activePage === currentPage ? "active-page" : "";
-  return <div className={pageStatus}>{children}</div>;
+function PageLink({ activePage, linkedPage, children }) {
+  const linkClassName = activePage === linkedPage ? "active-page" : "";
+  return <div className={linkClassName}>{children}</div>;
 }
 
 export default Navbar;

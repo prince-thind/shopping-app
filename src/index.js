@@ -15,3 +15,12 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById("root")
 );
+
+//todo
+//refactor code
+//improve ui
+// implement fake data api
+// implement image fetch api
+// create a server for hiding the apis
+//seperate page for each item
+// add search feature

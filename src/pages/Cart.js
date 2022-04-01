@@ -1,11 +1,15 @@
-import "../styles/Cart.css";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import React from "react";
 
-import CartItem from "../features/items/CartItem.js"
+import "../styles/Cart.css";
+import { itemsSelector } from "../features/items/itemsSlice";
+import CartItem from "../features/items/CartItem.js";
 import Payment from "../components/Payment.js";
+import Attribution from "../components/Attribution";
 
-function Cart({ items }) {
+function Cart() {
+  const items = useSelector(itemsSelector);
   const totalValue = findTotal(items);
 
   return (
@@ -19,7 +23,7 @@ function Cart({ items }) {
       return (
         <div className="empty-cart">
           Cart is empty, Consider adding items from <Link to="/shop">shop</Link>
-          .{" "}
+          .
         </div>
       );
     }
@@ -44,15 +48,17 @@ function Cart({ items }) {
           .map((item) => {
             return <CartItem key={item.key} item={item} />;
           })}
+        <Attribution />
       </div>
     );
-  }
-
-  function findTotal(items) {
-    return items.reduce((acc, item) => {
-      return acc + item.price * item.count;
-    }, 0);
   }
 }
 
 export default Cart;
+
+//helper functions
+function findTotal(items) {
+  return items.reduce((acc, item) => {
+    return acc + item.price * item.count;
+  }, 0);
+}
