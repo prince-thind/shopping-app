@@ -23,7 +23,7 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build && npm run heroku",
-    "heroku": "git subtree push --prefix server package.json procfile heroku main"
+    "heroku": "git subtree push --prefix server heroku main"
   },
   "eslintConfig": {
     "extends": [
