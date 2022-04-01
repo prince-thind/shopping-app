@@ -1,8 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import getItems from "../../lib/getItems";
 
-const API_URL = "https://fakestoreapi.com/products";
-
 const initialState = {
   items: [],
   status: "idle",
@@ -10,9 +8,8 @@ const initialState = {
 };
 
 const fetchItems = createAsyncThunk("items/fetchItems", async () => {
-  const response = await fetch(API_URL);
-  const items = await response.json();
-  return items;
+  const response = await getItems();
+  return response;
 });
 
 const itemsSlice = createSlice({
@@ -34,7 +31,7 @@ const itemsSlice = createSlice({
   },
   extraReducers(builder) {
     builder.addCase(fetchItems.fulfilled, (state, action) => {
-      const result = getItems(action.payload);
+      const result = action.payload;
       state.items.push(...result);
     });
   },

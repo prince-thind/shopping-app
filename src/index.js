@@ -22,3 +22,4 @@ ReactDOM.render(
 // implement fake data api
 // implement image fetch api
 // create a server for hiding the apis
+//seperate page for each item
