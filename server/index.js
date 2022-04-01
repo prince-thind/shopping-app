@@ -1,11 +1,15 @@
 const express = require("express");
 require('dotenv').config();
 const axios = require("axios");
+const helmet = require("helmet");
+
 const PORT = process.env.PORT || 3001; //development
 const app = express();
 const cors = require("cors"); //development
 
-app.use(cors());
+app.use(cors({origin:process.env.ORIGIN}));
+app.use(helmet());
+
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 });
