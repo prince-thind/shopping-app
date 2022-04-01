@@ -6,6 +6,7 @@ import "../styles/Cart.css";
 import { itemsSelector } from "../features/items/itemsSlice";
 import CartItem from "../features/items/CartItem.js";
 import Payment from "../components/Payment.js";
+import Attribution from "../components/Attribution";
 
 function Cart() {
   const items = useSelector(itemsSelector);
@@ -47,6 +48,7 @@ function Cart() {
           .map((item) => {
             return <CartItem key={item.key} item={item} />;
           })}
+        <Attribution />
       </div>
     );
   }

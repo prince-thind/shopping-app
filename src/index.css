@@ -53,3 +53,14 @@ main {
 .active-page {
   background-color: hsl(120, 34%, 32%);
 }
+
+.attribution{
+  display: flex;
+  align-items: center;
+  gap:1rem;
+}
+.attribution-image{
+  height: 1rem;
+  background-color: white;
+  padding:1rem;
+}

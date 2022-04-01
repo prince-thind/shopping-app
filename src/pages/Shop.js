@@ -2,6 +2,7 @@ import { itemsSelector, statusSelector } from "../features/items/itemsSlice";
 import { useSelector } from "react-redux";
 
 import Item from "../features/items/Item";
+import Attribution from "../components/Attribution";
 import "../styles/Shop.css";
 
 function Shop() {
@@ -15,6 +16,7 @@ function Shop() {
       <div className="items">
         <Items items={items} status={status}/>
       </div>
+      <Attribution/>
     </div>
   );
 
