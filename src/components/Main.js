@@ -4,23 +4,22 @@ import Home from "../pages/Home.js";
 import About from "../pages/About.js";
 import Shop from "../pages/Shop.js";
 import Cart from "../pages/Cart.js";
-import homeImage from "../images/home.jpg";
 
-function Main({ items }) {
+function Main() {
   return (
     <main className="main">
       <Switch>
         <Route path="/" exact>
-          <Home img={homeImage} />
+          <Home/>
         </Route>
         <Route path="/about" exact>
           <About />
         </Route>
         <Route path="/shop" exact>
-          <Shop items={items} />
+          <Shop/>
         </Route>
         <Route path="/cart" exact>
-          <Cart items={items} />
+          <Cart />
         </Route>
         <Route>
           <Redirect to="/" />
