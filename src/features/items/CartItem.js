@@ -8,7 +8,7 @@ function CartItem({ item }) {
     <div className="cart-item">
       <div className="cart-item-image-container flex-center">
         <img
-          src={item.image}
+          src={item.src}
           alt="cart item"
           className="cart-item-image photo-shadow"
         />

@@ -8,7 +8,7 @@ function Item({ item }) {
   return (
     <div className="item photo-shadow">
       <div className="item-img-container flex-center">
-        <img src={item.image} alt="item" className="item-img" />
+        <img src={item.src} alt="item" className="item-img" />
       </div>
       <div className="item-description">
         <span className="item-name">{getNormalName(item.name)}</span>
