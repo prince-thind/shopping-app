@@ -1,2 +1,2 @@
 # shopping-app
-a simple react+redux app for shopping.
+simple full stack app with react+redux as front end and express js as backend
