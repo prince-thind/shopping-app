@@ -38,7 +38,7 @@ const ResponsiveAppBar = () => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <MallIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          <MallIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1,fontSize:35 }} />
           <Typography
             variant="h4"
             noWrap

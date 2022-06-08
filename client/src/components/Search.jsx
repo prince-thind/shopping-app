@@ -3,8 +3,6 @@ import InputBase from "@mui/material/InputBase";
 import { styled, alpha } from "@mui/material/styles";
 
 export default function Search({ location }) {
-  console.log(location);
-
   if (!(location === "/items")) {
     return null;
   }
