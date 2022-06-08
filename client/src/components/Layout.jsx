@@ -1,10 +1,12 @@
 import { Outlet } from "react-router-dom";
+import Header from "./Header";
+import Box from "@mui/material/Box";
 
 export default function Layout() {
   return (
-    <div>
-      Layout
+    <Box>
+      <Header />
       <Outlet />
-    </div>
+    </Box>
   );
 }
