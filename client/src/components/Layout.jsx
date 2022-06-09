@@ -7,7 +7,7 @@ export default function Layout() {
   return (
     <Box>
       <Header />
-      <Container sx={{mt:2}}>
+      <Container sx={{ mt: 2, display: "flex", justifyContent: "center" }}>
         <Outlet />
       </Container>
     </Box>
