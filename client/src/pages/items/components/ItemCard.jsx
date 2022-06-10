@@ -7,7 +7,7 @@ import CustomLink from "../../../components/CustomLink";
 
 export default function ItemCard({ item }) {
   return (
-    <CustomLink to={"/items/" + (item.id+1)}>
+    <CustomLink to={"/items/" + (item.id)}>
       <Paper elevation={10} sx={{ p: 1, pb:3 }}>
         <Box sx={{ display: "flex", justifyContent: "center" }}>
           <img src={item.imageSrc} className="item-image" alt="item" />
