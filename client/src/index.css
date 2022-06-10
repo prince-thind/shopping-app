@@ -11,3 +11,8 @@ body {
 .main-image {
   max-width: 40vw;
 }
+
+.item-image{
+  max-height: 20vh;
+  max-width: 100%;
+}
