@@ -16,3 +16,8 @@ body {
   max-height: 20vh;
   max-width: 100%;
 }
+
+.item-image-page{
+  max-height: 60vh;
+  max-width: 100%;
+}

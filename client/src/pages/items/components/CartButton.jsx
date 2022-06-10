@@ -2,6 +2,7 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
+import IconButton from "@mui/material/IconButton";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import { useDispatch } from "react-redux";
 import { itemAdded, itemRemoved } from "../../../features/items/items";
@@ -31,23 +32,27 @@ export default function CartButton({ count, id }) {
         gap: "1rem",
       }}
     >
-      <RemoveCircleOutlineIcon
-        sx={{ color: "primary.main", fontSize: "2.5rem" }}
-        onClick={(e) => {
-          e.preventDefault();
-          decrementItem(id);
-        }}
-      />
+      <IconButton>
+        <RemoveCircleOutlineIcon
+          sx={{ color: "primary.main", fontSize: "2.5rem" }}
+          onClick={(e) => {
+            e.preventDefault();
+            decrementItem(id);
+          }}
+        />
+      </IconButton>
       <Typography variant="h6" component="span">
         {count}
       </Typography>
-      <AddCircleOutlineIcon
-        sx={{ color: "primary.main", fontSize: "2.5rem" }}
-        onClick={(e) => {
-          e.preventDefault();
-          incrementItem(id);
-        }}
-      />
+      <IconButton>
+        <AddCircleOutlineIcon
+          sx={{ color: "primary.main", fontSize: "2.5rem" }}
+          onClick={(e) => {
+            e.preventDefault();
+            incrementItem(id);
+          }}
+        />
+      </IconButton>
     </Box>
   );
   function incrementItem(id) {

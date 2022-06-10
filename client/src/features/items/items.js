@@ -55,4 +55,7 @@ export function statusSelector(state) {
     return state.items.status;
 }
 
+export const selectItemById = (state, id) =>
+    state.items.items.find((item) => id === item.id);
+
 export default itemsSlice.reducer;
