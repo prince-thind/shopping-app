@@ -6,7 +6,17 @@ import Home from "./pages/home/Home";
 import Item from "./pages/item/Item";
 import Items from "./pages/items/Items";
 
+import { useDispatch } from "react-redux";
+import { fetchItems } from "./features/items/items";
+import { useEffect } from "react";
+
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchItems());
+  }, [dispatch]);
+
   return (
     <div className="App">
       <BrowserRouter>

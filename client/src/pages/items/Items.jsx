@@ -1,25 +1,15 @@
 import Grid from "@mui/material/Grid";
 import ItemCard from "./components/ItemCard";
 import WaitingIcon from "./components/WaitingIcon";
-import { useSelector, useDispatch } from "react-redux";
-import {
-  fetchItems,
-  itemsSelector,
-  statusSelector,
-} from "../../features/items/items";
-import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { itemsSelector, statusSelector } from "../../features/items/items";
 
 export default function Items() {
   const data = useSelector(itemsSelector);
   const fetchStatus = useSelector(statusSelector);
-  const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchItems());
-  }, [dispatch]);
-
-  if(fetchStatus==='pending'){
-    return <WaitingIcon />
+  if (fetchStatus === "pending") {
+    return <WaitingIcon />;
   }
 
   return (
