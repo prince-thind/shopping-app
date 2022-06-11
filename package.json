@@ -1,21 +1,33 @@
 {
   "name": "shopping-app",
-  "version": "0.0.0",
   "private": true,
+  "version": "0.0.0",
   "scripts": {
-    "start": "nodemon ./bin/www",
-    "client": "cd client; npm run dev",
-    "build": "cd client; npm run build"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
-    "express": "~4.16.1",
-    "http-errors": "~1.6.3",
-    "jade": "~1.11.0",
-    "morgan": "~1.9.1"
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@fontsource/roboto": "^4.5.7",
+    "@mui/icons-material": "^5.8.3",
+    "@mui/material": "^5.8.3",
+    "@reduxjs/toolkit": "^1.8.2",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-redux": "^8.0.2",
+    "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.16"
-  }
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@vitejs/plugin-react": "^1.3.0",
+    "eslint": "^8.17.0",
+    "eslint-config-react-app": "^7.0.1",
+    "gh-pages": "^4.0.0",
+    "vite": "^2.9.9"
+  },
+  "homepage": "."
 }

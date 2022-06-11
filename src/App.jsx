@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import About from "./pages/about/About";
 import Cart from "./pages/cart/Cart";
@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
@@ -31,7 +31,7 @@ function App() {
             <Route path="about" element={<About />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
