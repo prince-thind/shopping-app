@@ -1,8 +1,9 @@
-import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
+import Paper from "@mui/material/Paper";
 import CartItemCard from "./components/CartItemCard";
 import TotalPayment from "./components/PaymentModule";
 import WaitingIcon from "../items/components/WaitingIcon";
+import List from "@mui/material/List";
 import { useSelector } from "react-redux";
 import { itemsSelector, statusSelector } from "../../features/items/items";
 
@@ -17,15 +18,14 @@ export default function Cart() {
 
   return (
     <Box>
-      <Grid container spacing={5} sx={{ mb: 2 }}>
-        {cartItems.map((item) => {
-          return (
-            <Grid item xs={12} key={item.id}>
-              <CartItemCard item={item} />
-            </Grid>
-          );
-        })}
-      </Grid>
+      <Paper elevation={3}>
+        <List sx={{mt:3, p:0}}>
+          {cartItems.map((item) => {
+            return <CartItemCard item={item} />;
+          })}
+        </List>
+      </Paper>
+
       <TotalPayment />
     </Box>
   );
