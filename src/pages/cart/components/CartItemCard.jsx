@@ -3,6 +3,7 @@ import Typography from "@mui/material/Typography";
 import ListItem from "@mui/material/ListItem";
 import Rating from "@mui/material/Rating";
 import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
 import CustomLink from "../../../components/CustomLink";
 import CartButton from "../../items/components/CartButton";
 
@@ -10,14 +11,14 @@ export default function CartItemCard({ item }) {
   return (
     <ListItem  divider>
       <CustomLink to={"/items/" + item.id}>
-        <Box
+        <Grid
           sx={{
             color: "text.primary",
-            display: "flex",
             width: "90vw",
           }}
+          container
         >
-          <Box
+          <Grid item xs={3}
             sx={{
               display: "flex",
               flexDirection: "column",
@@ -26,8 +27,8 @@ export default function CartItemCard({ item }) {
           >
             <img src={item.imageSrc} className="item-image" alt="item" />
             <CartButton count={item.count} id={item.id} />
-          </Box>
-          <Box sx={{ p: 2, pl: 5, display: "flex", flex: 1 }}>
+          </Grid>
+          <Grid item xs={9} sx={{ p: 2, pl: 5, display: "flex", flex: 1 }}>
             <Box sx={{ flex: 1 }}>
               <Typography variant="h5" component="h3">
                 {item.name}
@@ -58,8 +59,8 @@ export default function CartItemCard({ item }) {
                 Total: ${item.count * item.price}
               </Typography>
             </Box>
-          </Box>
-        </Box>
+          </Grid>
+        </Grid>
       </CustomLink>
     </ListItem>
   );
