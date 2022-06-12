@@ -12,14 +12,17 @@ export default function CartButton({ count, id }) {
 
   if (count === 0) {
     return (
-      <Button
-        onClick={(e) => {
-          e.preventDefault();
-          incrementItem(id);
-        }}
-      >
-        Add to Cart
-      </Button>
+      <Box sx={{ textAlign: "center", pt:2 }}>
+        <Button
+          onClick={(e) => {
+            e.preventDefault();
+            incrementItem(id);
+          }}
+          variant="outlined"
+        >
+          Add to Cart
+        </Button>
+      </Box>
     );
   }
 
