@@ -9,7 +9,7 @@ import CartButton from "./CartButton";
 export default function ItemCard({ item }) {
   return (
     <CustomLink to={"/items/" + item.id}>
-      <Paper elevation={10} sx={{ p: 1, pb: 3 }}>
+      <Paper elevation={10} sx={{ p: 1, pb: 3 }}  className="hover">
         <Box sx={{ display: "flex", justifyContent: "center" }}>
           <img src={item.imageSrc} className="item-image" alt="item" />
         </Box>

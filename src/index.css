@@ -21,3 +21,7 @@ body {
   max-height: 60vh;
   max-width: 100%;
 }
+
+.hover:hover{
+  transform: scale(1.02);
+}
