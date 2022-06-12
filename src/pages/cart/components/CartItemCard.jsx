@@ -8,7 +8,7 @@ import CartButton from "../../items/components/CartButton";
 
 export default function CartItemCard({ item }) {
   return (
-    <ListItem button divider>
+    <ListItem  divider>
       <CustomLink to={"/items/" + item.id}>
         <Box
           sx={{
