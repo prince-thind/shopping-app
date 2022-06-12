@@ -32,25 +32,27 @@ export default function CartButton({ count, id }) {
         gap: "1rem",
       }}
     >
-      <IconButton>
+      <IconButton
+        onClick={(e) => {
+          e.preventDefault();
+          decrementItem(id);
+        }}
+      >
         <RemoveCircleOutlineIcon
           sx={{ color: "primary.main", fontSize: "2.5rem" }}
-          onClick={(e) => {
-            e.preventDefault();
-            decrementItem(id);
-          }}
         />
       </IconButton>
       <Typography variant="h6" component="span">
         {count}
       </Typography>
-      <IconButton>
+      <IconButton
+        onClick={(e) => {
+          e.preventDefault();
+          incrementItem(id);
+        }}
+      >
         <AddCircleOutlineIcon
           sx={{ color: "primary.main", fontSize: "2.5rem" }}
-          onClick={(e) => {
-            e.preventDefault();
-            incrementItem(id);
-          }}
         />
       </IconButton>
     </Box>
