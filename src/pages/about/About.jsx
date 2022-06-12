@@ -4,7 +4,7 @@ import Typography from "@mui/material/Typography";
 export default function About() {
   return (
     <Box>
-      <Typography variant="h6" component="p" sx={{textAlign:'center'}}>
+      <Typography variant="h6" component="p" sx={{textAlign:'center', fontWeight:'normal'}}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, fugiat
         aliquam! Officiis corporis quasi enim error rerum similique sapiente,
         repellat iure aut incidunt possimus deserunt ea harum? Aspernatur saepe
