@@ -37,7 +37,7 @@ function Item() {
         }
         )
       </Typography>
-      <Rating name="read-only" value={3} readOnly precision={0.5} />
+      <Rating name="read-only" value={item.rating} readOnly precision={0.5} />
 
       <Grid container sx={{ pt: 2 }} spacing={2}>
         <Grid item xs={6} sx={{ display: "flex", justifyContent: "center" }}>

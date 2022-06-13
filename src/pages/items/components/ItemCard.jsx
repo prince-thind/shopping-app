@@ -17,7 +17,7 @@ export default function ItemCard({ item }) {
           <Typography variant="h5" component="h3">
             {item.name}
           </Typography>
-          <Rating name="read-only" value={3} readOnly precision={0.5} />
+          <Rating name="read-only" value={item.rating} readOnly precision={0.5} />
 
           <Typography
             variant="body2"
