@@ -38,7 +38,9 @@ const ResponsiveAppBar = () => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <MallIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1,fontSize:35 }} />
+          <MallIcon
+            sx={{ display: { xs: "none", md: "flex" }, mr: 1, fontSize: 35 }}
+          />
           <Typography
             variant="h4"
             noWrap
@@ -85,7 +87,9 @@ const ResponsiveAppBar = () => {
             >
               {pages.map((page) => (
                 <MenuItem key={page.name} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page.name}</Typography>
+                  <CustomLink to={page.url} key={page.name} color="text.primary">
+                    <Typography textAlign="center">{page.name}</Typography>
+                  </CustomLink>
                 </MenuItem>
               ))}
             </Menu>
