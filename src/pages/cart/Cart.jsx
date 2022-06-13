@@ -2,7 +2,7 @@ import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import CartItemCard from "./components/CartItemCard";
 import TotalPayment from "./components/PaymentModule";
-import WaitingIcon from "../items/components/WaitingIcon";
+import WaitingIcon from "../../components/minor/WaitingIcon";
 import List from "@mui/material/List";
 import { useSelector } from "react-redux";
 import { itemsSelector, statusSelector } from "../../features/items/items";

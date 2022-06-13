@@ -3,17 +3,23 @@ import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import Rating from "@mui/material/Rating";
+import WaitingIcon from "../../components/minor/WaitingIcon";
 
 import { useSelector } from "react-redux";
 import { useParams } from "react-router";
 
-import { selectItemById } from "../../features/items/items";
-import CartButton from "../items/components/CartButton";
+import { selectItemById, statusSelector } from "../../features/items/items";
+import CartButton from "../../components/minor/CartButton";
 
 function Item() {
   const id = useParams().id;
   const item = useSelector((state) => selectItemById(state, id));
+  const fetchStatus = useSelector(statusSelector);
 
+  if (fetchStatus === "pending") {
+    return <WaitingIcon />;
+  }
+  
   if (!item) {
     return (
       <Typography variant="h2" component="h2">

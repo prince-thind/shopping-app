@@ -4,7 +4,7 @@ import Paper from "@mui/material/Paper";
 import Rating from "@mui/material/Rating";
 import Box from "@mui/material/Box";
 import CustomLink from "../../../components/CustomLink";
-import CartButton from "./CartButton";
+import CartButton from "../../../components/minor/CartButton";
 
 export default function ItemCard({ item }) {
   return (

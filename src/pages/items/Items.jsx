@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import ItemCard from "./components/ItemCard";
-import WaitingIcon from "./components/WaitingIcon";
+import WaitingIcon from "../../components/minor/WaitingIcon";
 import { useSelector } from "react-redux";
 import { itemsSelector, statusSelector } from "../../features/items/items";
 

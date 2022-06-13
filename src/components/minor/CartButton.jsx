@@ -5,7 +5,7 @@ import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 import IconButton from "@mui/material/IconButton";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import { useDispatch } from "react-redux";
-import { itemAdded, itemRemoved } from "../../../features/items/items";
+import { itemAdded, itemRemoved } from "../../features/items/items";
 
 export default function CartButton({ count, id }) {
   const dispatch = useDispatch();

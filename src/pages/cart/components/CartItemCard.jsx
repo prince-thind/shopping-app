@@ -5,11 +5,11 @@ import Rating from "@mui/material/Rating";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import CustomLink from "../../../components/CustomLink";
-import CartButton from "../../items/components/CartButton";
+import CartButton from "../../../components/minor/CartButton";
 
 export default function CartItemCard({ item }) {
   return (
-    <ListItem  divider>
+    <ListItem divider>
       <CustomLink to={"/items/" + item.id}>
         <Grid
           sx={{
@@ -18,7 +18,9 @@ export default function CartItemCard({ item }) {
           }}
           container
         >
-          <Grid item xs={3}
+          <Grid
+            item
+            xs={3}
             sx={{
               display: "flex",
               flexDirection: "column",
@@ -33,7 +35,12 @@ export default function CartItemCard({ item }) {
               <Typography variant="h5" component="h3">
                 {item.name}
               </Typography>
-              <Rating name="read-only" value={item.rating} readOnly precision={0.5} />
+              <Rating
+                name="read-only"
+                value={item.rating}
+                readOnly
+                precision={0.5}
+              />
 
               <Typography
                 variant="body2"
