@@ -3,6 +3,7 @@ import Paper from "@mui/material/Paper";
 import CartItemCard from "./components/CartItemCard";
 import TotalPayment from "./components/PaymentModule";
 import WaitingIcon from "../../components/minor/WaitingIcon";
+import Grow from "@mui/material/Grow";
 import CustomLink from "../../components/CustomLink";
 
 import List from "@mui/material/List";
@@ -31,16 +32,18 @@ export default function Cart() {
     );
   }
   return (
-    <Box>
-      <Paper elevation={3}>
-        <List sx={{ mt: 3, p: 0 }}>
-          {cartItems.map((item) => {
-            return <CartItemCard item={item} key={item.id}/>;
-          })}
-        </List>
-      </Paper>
+    <Grow in>
+      <Box>
+        <Paper elevation={3}>
+          <List sx={{ mt: 3, p: 0 }}>
+            {cartItems.map((item) => {
+              return <CartItemCard item={item} key={item.id} />;
+            })}
+          </List>
+        </Paper>
 
-      <TotalPayment />
-    </Box>
+        <TotalPayment />
+      </Box>
+    </Grow>
   );
 }
